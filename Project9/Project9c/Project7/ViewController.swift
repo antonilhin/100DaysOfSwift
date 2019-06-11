@@ -117,12 +117,9 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        DispatchQueue.main.async { [weak self] in
-            let vc = DetailViewController()
-            vc.detailItem = self?.filteredPetitions[indexPath.row]
-            self?.navigationController?.pushViewController(vc, animated: true)
-        }
-        
+        let vc = DetailViewController()
+        vc.detailItem = filteredPetitions[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
 
     }
 
